@@ -11,4 +11,4 @@ services:
       apt-get update
       apt-get install -y google-chrome-stable
       npm install
-    startCommand: npm start
+    startCommand: node index.js
