@@ -30,6 +30,7 @@ async function runPuppeteer() {
 
   async function createChromeProfile() {
     const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/google-chrome-stable', // Path to the installed Chrome on Render
       headless: true, // Set to true for headless mode
       args: [
         `--user-data-dir=${chromeProfilePath}`,
@@ -39,7 +40,6 @@ async function runPuppeteer() {
         "--disable-setuid-sandbox",
         "--disable-gpu",
         "--window-size=1280,800", // Ensure consistent viewport
-        "--user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'", // Use a standard user agent
       ],
       defaultViewport: {
         width: 1280,
@@ -70,6 +70,7 @@ async function runPuppeteer() {
 
   async function useChromeProfile() {
     const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/google-chrome-stable', // Path to the installed Chrome on Render
       headless: true, // Set to true for headless mode
       args: [
         `--user-data-dir=${chromeProfilePath}`,
@@ -78,8 +79,7 @@ async function runPuppeteer() {
         "--no-sandbox",
         "--disable-setuid-sandbox",
         "--disable-gpu",
-        "--window-size=1280,800",
-        "--user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'",
+        "--window-size=1280,800", // Ensure consistent viewport
       ],
       defaultViewport: {
         width: 1280,
