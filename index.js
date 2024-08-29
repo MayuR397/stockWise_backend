@@ -23,6 +23,9 @@ app.use(bodyParser.json());
 // Routes
 app.use("/auth", authRoutes);
 app.use("/api", puppeteerRoutes);
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
