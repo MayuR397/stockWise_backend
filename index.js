@@ -6,7 +6,7 @@ import authRoutes from "./routes/auth.js";
 import puppeteerRoutes from "./routes/puppeteerRoutes.js";
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // MongoDB connection
 connectDB();
